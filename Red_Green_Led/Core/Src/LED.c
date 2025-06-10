@@ -1,0 +1,43 @@
+#include "LED.h"
+
+void EW_Led(Led_Colour data)
+{
+	switch(data){
+		case RED:
+			HAL_GPIO_WritePin(EW_RED_GPIO_Port,EW_RED_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(EW_GREEN_GPIO_Port,EW_GREEN_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EW_YELLOW_GPIO_Port,EW_YELLOW_Pin,GPIO_PIN_RESET);
+			break;
+		case GREEN:
+			HAL_GPIO_WritePin(EW_RED_GPIO_Port,EW_RED_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EW_GREEN_GPIO_Port,EW_GREEN_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(EW_YELLOW_GPIO_Port,EW_YELLOW_Pin,GPIO_PIN_RESET);
+			break;
+		case YELLOW:
+			HAL_GPIO_WritePin(EW_RED_GPIO_Port,EW_RED_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EW_GREEN_GPIO_Port,EW_GREEN_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EW_YELLOW_GPIO_Port,EW_YELLOW_Pin,GPIO_PIN_SET);
+			break;
+	}
+}
+
+void NS_Led(Led_Colour data)
+{
+	switch(data){
+		case RED:
+			HAL_GPIO_WritePin(NS_RED_GPIO_Port,NS_RED_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(NS_GREEN_GPIO_Port,NS_GREEN_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(NS_YELLOW_GPIO_Port,NS_YELLOW_Pin,GPIO_PIN_RESET);
+			break;
+		case GREEN:
+			HAL_GPIO_WritePin(NS_RED_GPIO_Port,NS_RED_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(NS_GREEN_GPIO_Port,NS_GREEN_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(NS_YELLOW_GPIO_Port,NS_YELLOW_Pin,GPIO_PIN_RESET);
+			break;
+		case YELLOW:
+			HAL_GPIO_WritePin(NS_RED_GPIO_Port,NS_RED_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(NS_GREEN_GPIO_Port,NS_GREEN_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(NS_YELLOW_GPIO_Port,NS_YELLOW_Pin,GPIO_PIN_SET);
+			break;
+	}
+}
